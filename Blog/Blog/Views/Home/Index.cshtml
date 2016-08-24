@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (TempData["successLogin"] != null ||
+                 TempData["changePass"] != null ||
+                 TempData["deleteProfil"] != null ||
+                 TempData["toLoginAllert"] != null)
+{
+    <div class="alert-box">
+        <div class="alert-success">
+            <strong>@TempData["successLogin"]</strong>
+            <strong>@TempData["changePass"]</strong>
+            <strong>@TempData["deleteProfil"]</strong>
+        </div>
+        <div class="alert-info">
+            <strong>@TempData["toLoginAllert"]</strong>
+        </div>
+    </div>
+}
+<div class="jumbotron">
+    <h1>Blog Software University</h1>
+    <p class="lead">This is a small project for Software University from "404 Team Not Found".</p>
+    <p><a href="http://softuni.bg" class="btn btn-primary btn-lg">Learn more about SoftUni &raquo;</a></p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>About the site:</h2>
+        <p>
+            The project contains a simple register, login and logout form with the popular crypt: "Simple Crypto"
+            in details - PBKDF2 algorithm. Every user can make posts and comments in different categories. You can atach
+            a tag to the post for simple search. If you like our page go to the contact page to find us and the source code
+            in GitHub. Enjoy!
+        </p>
+    </div>
+</div>
