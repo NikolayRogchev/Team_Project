@@ -200,12 +200,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BlogModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Post.cs">
-      <DependentUpon>BlogModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.cs">
-      <DependentUpon>BlogModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +224,7 @@
       <DependentUpon>BlogModel.edmx</DependentUpon>
       <LastGenOutput>BlogModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\BlogModel.edmx.sql" />
     <Content Include="Models\BlogModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BlogModel.edmx</DependentUpon>

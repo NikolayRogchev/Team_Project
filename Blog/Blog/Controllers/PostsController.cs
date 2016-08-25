@@ -17,7 +17,7 @@ namespace Blog.Controllers
         // GET: Post
         public ActionResult Index()
         {
-            var post = db.Post.Include(p => p.User);
+            var post = db.Post.Include(p => p.UserId);
             return View(post.ToList());
         }
 

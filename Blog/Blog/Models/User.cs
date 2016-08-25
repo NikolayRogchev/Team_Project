@@ -62,5 +62,14 @@ namespace Blog.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        public string Email { get; set; }
+
+        [Required]
+        [StringLength(10)]
+        public string EmailConfirmed { get; set; }
+
+        public DateTime DateCreated { get; set; }
     }
 }

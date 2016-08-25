@@ -29,7 +29,7 @@
                     <li>@Html.ActionLink("Popular tags", "Index", "Tag")</li>
                     @if (Request.IsAuthenticated)
                     {
-                        <li class="greeting"> Hello, @Html.ActionLink("User", "Details", @HttpUtility.HtmlDecode(User.Identity.Name))</li>
+                        <li class="greeting"> Hello, @HttpUtility.HtmlDecode(User.Identity.Name)</li>
                         <li>@Html.ActionLink("Log out", "Logout", "User")</li>
                     }
                     else

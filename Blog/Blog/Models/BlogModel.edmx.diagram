@@ -8,6 +8,12 @@
         <EntityTypeShape EntityType="BlogDataModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BlogDataModel.Post" Width="1.5" PointX="3" PointY="0.75" />
         <AssociationConnector Association="BlogDataModel.FK_Post_ToUser" />
+        <EntityTypeShape EntityType="BlogDataModel.Comment" Width="1.5" PointX="5.875" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="BlogDataModel.PostComments" />
+        <EntityTypeShape EntityType="BlogDataModel.Tag" Width="1.5" PointX="8.75" PointY="0.75" />
+        <AssociationConnector Association="BlogDataModel.TagPosts" />
+        <EntityTypeShape EntityType="BlogDataModel.Category" Width="1.5" PointX="5.875" PointY="5" />
+        <AssociationConnector Association="BlogDataModel.PostCategory" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

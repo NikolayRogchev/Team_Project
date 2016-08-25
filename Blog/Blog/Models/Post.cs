@@ -1,28 +1,34 @@
-namespace Blog.Models
+namespace Blog
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("Post")]
     public partial class Post
     {
         public int PostId { get; set; }
-        public Nullable<int> UserId { get; set; }
+
+        public int UserId { get; set; }
 
         [Required]
-        [StringLength(80, MinimumLength = 4, ErrorMessage = "The title must be between 8 and 40 characters.")]
-        [Display(Name = "Title")]
+        [StringLength(80)]
         public string Title { get; set; }
 
-        [StringLength(150, MinimumLength = 4, ErrorMessage = "The about content must be between 4 and 150 characters.")]
+        [Required]
+        [StringLength(150)]
         public string About { get; set; }
 
+        [Column(TypeName = "ntext")]
         [Required]
-        [StringLength(int.MaxValue, MinimumLength = 10, ErrorMessage = "The content is too short.")]
         public string Content { get; set; }
 
-        public System.DateTime DatePosted { get; set; }
-        public Nullable<int> CategoryId { get; set; }
-    
-        public virtual User User { get; set; }
+        public DateTime DatePosted { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public int TagId { get; set; }
     }
 }
