@@ -4,16 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="940c72b30efe44568426fa6f822d5e71" Name="Diagram1">
-        <EntityTypeShape EntityType="BlogDataModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BlogDataModel.Post" Width="1.5" PointX="3" PointY="0.75" />
-        <AssociationConnector Association="BlogDataModel.FK_Post_ToUser" />
-        <EntityTypeShape EntityType="BlogDataModel.Comment" Width="1.5" PointX="5.875" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="BlogDataModel.PostComments" />
-        <EntityTypeShape EntityType="BlogDataModel.Tag" Width="1.5" PointX="8.75" PointY="0.75" />
-        <AssociationConnector Association="BlogDataModel.TagPosts" />
-        <EntityTypeShape EntityType="BlogDataModel.Category" Width="1.5" PointX="5.875" PointY="5" />
-        <AssociationConnector Association="BlogDataModel.PostCategory" />
+      <Diagram DiagramId="0c3104ac311c4950b06bb387d8e9e53e" Name="Diagram1">
+        <EntityTypeShape EntityType="BlogDataModel.Category" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDataModel.Comment" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDataModel.Post" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDataModel.Tag" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDataModel.User" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="BlogDataModel.FK_Post_ToCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDataModel.FK_Comment_ToPost" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDataModel.FK_Comment_ToUser" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDataModel.FK_Post_ToUser" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDataModel.PostTag" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

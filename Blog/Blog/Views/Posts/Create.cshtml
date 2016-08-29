@@ -4,16 +4,13 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<p class="page-title">Create</p>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Post</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+   @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.UserId, "UserId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -39,12 +36,25 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Content, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Content, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Content, "", new {@class = "text-danger"})
             </div>
         </div>
+
+        <script>
+                 $(function () {
+                    $(".datepicker").datepicker();
+                 });
+        </script>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.DatePosted, htmlAttributes: new { @class = "control-label col-md-2" })
+            <input type="text" id="datepicker" style="width: 150px"/>
+            @Html.EditorFor(model => model.DatePosted, new { htmlAttributes = new { @class = "datepicker" } })
+        </div>*@
+      
 
         <div class="form-group">
             @Html.LabelFor(model => model.DatePosted, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -64,10 +74,10 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-blue btn-effect" />
             </div>
         </div>
-    </div>
+  
 }
 
 <div>

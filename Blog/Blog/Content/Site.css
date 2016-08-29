@@ -24,7 +24,7 @@ textarea {
 }
 
 .tabulance-log-in{
-    padding-left: 25em;
+    padding-left: 10em;
 }
 
 .greeting{
@@ -47,4 +47,96 @@ textarea {
 .search-box{
     margin-top: 2em;
     margin-bottom: 2em;
+}
+.jumbotron {
+    
+    background: url(../img/header-bg.jpg) no-repeat center top;
+	margin-top: -10px;
+	padding-top:20px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 700px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+   h1.home-header {
+   
+	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	font-size: 100px;
+	font-weight: 800;
+	letter-spacing: 0.15em;
+	line-height: 40px;
+	text-transform: uppercase;
+	color: #ffffff;
+	margin-top: 20px;
+    padding-top: 200px;
+}
+.jumbotron p.home-header-small {
+    color: white;
+	font-size: 50px;
+	font-weight: 100;
+	letter-spacing: 2px;
+    padding-top: 300px;
+   }
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+/* TEAM CONF */
+
+.team {
+	padding-top: 20px;
+}
+
+.team:hover {
+	background: white;
+}
+
+.team a {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.page-title {
+    padding-top: 50px;
+    font-size: 40px;
+    font-family: 'Raleway';
+    text-align: center;
+    border-bottom: 5px solid transparent;
+    border-bottom-color:  #428bca;
+    
 }

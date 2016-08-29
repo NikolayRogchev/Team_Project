@@ -6,14 +6,14 @@
     ViewBag.Title = "User";
 }
 
-<h2>View all users</h2>
+<p class="page-title">View all users</p>
 
 @using (Html.BeginForm("Index", "User", FormMethod.Get))
 {
     <div class="search-box">
         <p>
             Find by name: @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
-            <input type="submit" value="Search">
+            <input type="submit" value="Search" class="btn btn-blue btn-effect">
         </p>
     </div>
 }

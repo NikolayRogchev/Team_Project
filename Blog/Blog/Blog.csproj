@@ -200,11 +200,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BlogModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\Post.cs" />
-    <Compile Include="Models\Tag.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>BlogModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comment.cs">
+      <DependentUpon>BlogModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post.cs">
+      <DependentUpon>BlogModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tag.cs">
+      <DependentUpon>BlogModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>BlogModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -212,9 +222,18 @@
     <Content Include="App_Data\BlogData_log.ldf">
       <DependentUpon>BlogData.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\jquery.fancybox.css" />
+    <Content Include="Content\jquery.fs.boxer.min.css" />
+    <Content Include="Content\lightview.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\owl.carousel.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\slit-slider.css" />
+    <Content Include="Content\superslides.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -224,7 +243,6 @@
       <DependentUpon>BlogModel.edmx</DependentUpon>
       <LastGenOutput>BlogModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\BlogModel.edmx.sql" />
     <Content Include="Models\BlogModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BlogModel.edmx</DependentUpon>
@@ -248,6 +266,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.slitslider.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -283,8 +302,14 @@
     <Content Include="Views\Post\Index.cshtml" />
     <Content Include="Views\Post\CreatePost.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Posts\RecentPosts.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Posts\Comment.cshtml" />
+    <Content Include="Views\Home\Tutorials.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Tag\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -295,6 +320,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

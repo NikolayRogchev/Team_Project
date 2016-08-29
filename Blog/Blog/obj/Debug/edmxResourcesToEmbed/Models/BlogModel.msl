@@ -1,8 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BlogDataModelStoreContainer" CdmEntityContainer="BlogDataEntities">
-    <EntitySetMapping Name="User">
-      <EntityTypeMapping TypeName="IsTypeOf(BlogDataModel.User)">
+  <EntityContainerMapping StorageEntityContainer="BlogDataModelStoreContainer" CdmEntityContainer="BlogDataEntities3">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="BlogDataModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="BlogDataModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="DatePublished" ColumnName="DatePublished" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="BlogDataModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="About" ColumnName="About" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tags">
+      <EntityTypeMapping TypeName="BlogDataModel.Tag">
+        <MappingFragment StoreEntitySet="Tag">
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="TagName" ColumnName="TagName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BlogDataModel.User">
         <MappingFragment StoreEntitySet="User">
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Username" ColumnName="Username" />
@@ -14,46 +54,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Post">
-      <EntityTypeMapping TypeName="IsTypeOf(BlogDataModel.Post)">
-        <MappingFragment StoreEntitySet="Post">
-          <ScalarProperty Name="PostId" ColumnName="PostId" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="About" ColumnName="About" />
-          <ScalarProperty Name="Content" ColumnName="Content" />
-          <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
-          <ScalarProperty Name="TagId" ColumnName="TagId" />
-          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CommentSet">
-      <EntityTypeMapping TypeName="IsTypeOf(BlogDataModel.Comment)">
-        <MappingFragment StoreEntitySet="CommentsSet">
-          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="Content" ColumnName="Content" />
-          <ScalarProperty Name="DateCommented" ColumnName="DateCommented" />
-          <ScalarProperty Name="PostId" ColumnName="PostId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TagSet">
-      <EntityTypeMapping TypeName="IsTypeOf(BlogDataModel.Tag)">
-        <MappingFragment StoreEntitySet="TagsSet">
-          <ScalarProperty Name="TagId" ColumnName="TagId" />
-          <ScalarProperty Name="TagName" ColumnName="TagName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CategorySet">
-      <EntityTypeMapping TypeName="IsTypeOf(BlogDataModel.Category)">
-        <MappingFragment StoreEntitySet="CategorySet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CategoryType" ColumnName="CategoryType" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+    <AssociationSetMapping Name="PostTag" TypeName="BlogDataModel.PostTag" StoreEntitySet="PostTag">
+      <EndProperty Name="Post">
+        <ScalarProperty Name="PostId" ColumnName="PostId" />
+      </EndProperty>
+      <EndProperty Name="Tag">
+        <ScalarProperty Name="TagId" ColumnName="TagId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -24,5 +24,10 @@ namespace Blog.Controllers
 
             return View();
         }
+        public ActionResult Tutorials()
+        {
+
+            return View();
+        }
     }
 }

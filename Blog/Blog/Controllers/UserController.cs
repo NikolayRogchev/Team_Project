@@ -73,7 +73,7 @@ namespace Blog.Controllers
         { return View(); }
 
         [HttpPost]
-        public ActionResult Login(Models.LoginUser user, string returnUrl)
+        public ActionResult Login(Blog.Models.LoginUser user, string returnUrl)
         {
             if (isValid(user.Username, user.Password, false))
             {

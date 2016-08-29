@@ -7,18 +7,22 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Blog.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Blog.Controllers
 {
+   
     public class PostsController : Controller
     {
         private BlogDataEntities db = new BlogDataEntities();
 
+      
         // GET: Post
         public ActionResult Index()
         {
-            var post = db.Post.Include(p => p.UserId);
+            var post = db.Post.Include(p => p.User);
             return View(post.ToList());
+
         }
 
         // GET: Post/Details/5
@@ -82,7 +86,7 @@ namespace Blog.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PostId,UserId,Title,About,Content,DatePosted,CategoryId")] Post post)
+        public ActionResult Edit([Bind(Include = "PostId,UserId,Title,About,Content,DatePosted,CategoryId,Comment,Tag")] Post post)
         {
             if (ModelState.IsValid)
             {
@@ -118,6 +122,41 @@ namespace Blog.Controllers
             db.Post.Remove(post);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+      
+        public ActionResult Comment()
+        {
+            if (User.Identity.Name == "")
+            {
+                TempData["toLoginAllert"] = "To comment a post please log in.";
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View("Comment");
+        }
+
+        [HttpPost]
+        public ActionResult Comment(int postId, int? userId, Comment comment)
+        {
+            if (ModelState.IsValid)
+            {
+                var userName = User.Identity.Name;
+                var user = db.User.FirstOrDefault(u => u.Username == userName);
+
+
+                var newComment = db.Comment.Create();
+                newComment.Content = comment.Content;
+                newComment.UserId = user.UserId;
+                newComment.PostId = postId;
+                newComment.DatePublished = DateTime.Now;
+                db.Comment.Add(newComment);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.UserId = new SelectList(db.User, "UserId", "Username", comment.UserId);
+            return View(comment);
         }
 
         protected override void Dispose(bool disposing)
