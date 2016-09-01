@@ -136,12 +136,7 @@ warning 6002: The table/view 'C:\USERS\USER\DESKTOP\TEAMPROJECT\BLOG\BLOG\APP_DA
     <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PostTag" EntityType="Self.PostTag" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [PostTag].[PostId] AS [PostId], 
-    [PostTag].[TagId] AS [TagId]
-    FROM [dbo].[PostTag] AS [PostTag]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="PostTag" EntityType="Self.PostTag" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_Comment_ToPost" Association="Self.FK_Comment_ToPost">
       <End Role="Post" EntitySet="Post" />
       <End Role="Comment" EntitySet="Comment" />

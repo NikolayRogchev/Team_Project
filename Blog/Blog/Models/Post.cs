@@ -21,6 +21,7 @@ namespace Blog.Models
         [StringLength(int.MaxValue, MinimumLength = 10, ErrorMessage = "The content is too short.")]
         public string Content { get; set; }
 
+        [DataType(DataType.Date)]
         public System.DateTime DatePosted { get; set; }
         public Nullable<int> CategoryId { get; set; }
 
@@ -31,5 +32,7 @@ namespace Blog.Models
         public virtual ICollection<Comment> Comment { get; set; }
 
         public virtual ICollection<Tag> Tag { get; set; }
+
+        public int[] SelectedTags { get; set; }
     }
 }

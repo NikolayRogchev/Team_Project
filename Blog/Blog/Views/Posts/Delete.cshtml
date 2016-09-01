@@ -8,7 +8,6 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Post</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -65,8 +64,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-blue btn-effect" /> |
-            @Html.ActionLink("Back to List", "Index")
+        <input type="submit" value="Delete" class="post-button-comment btn btn-blue btn-effect" />
+            <p class="post-button-comment btn btn-blue">@Html.ActionLink("Back to List", "Index")</p>
         </div>
     }
 </div>

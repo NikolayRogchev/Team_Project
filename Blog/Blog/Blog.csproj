@@ -222,6 +222,8 @@
     <Content Include="App_Data\BlogData_log.ldf">
       <DependentUpon>BlogData.mdf</DependentUpon>
     </Content>
+    <Content Include="Chosen\chosen.css" />
+    <Content Include="Chosen\chosen.jquery.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -266,11 +268,14 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
     <Content Include="Scripts\jquery.slitslider.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jssor.slider-21.1.5.debug.js" />
+    <Content Include="Scripts\jssor.slider-21.1.5.min.js" />
     <Content Include="Scripts\message.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\preventBack.js" />
@@ -303,13 +308,14 @@
     <Content Include="Views\Post\CreatePost.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Posts\RecentPosts.cshtml" />
-    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Posts\AllCategories.cshtml" />
     <Content Include="Views\Posts\Comment.cshtml" />
+    <Content Include="Views\Posts\Category.cshtml" />
+    <Content Include="Views\Post\Category.cshtml" />
+    <Content Include="Views\Posts\Gallery.cshtml" />
     <Content Include="Views\Home\Tutorials.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Tag\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -320,9 +326,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

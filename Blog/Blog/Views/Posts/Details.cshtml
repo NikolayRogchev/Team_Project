@@ -7,7 +7,6 @@
 <p class="page-title">Details</p>
 
 <div>
-    <h4>Post</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -35,7 +34,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DatePosted)
+            Date Posted
         </dt>
 
         <dd>
@@ -43,24 +42,35 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CategoryId)
+           Category
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CategoryId)
+            @Html.DisplayFor(model => model.Category.Content)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.User.Username)
+           Author
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.User.Username)
         </dd>
+        <dt>
+            Comments Count
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Count)
+        </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }) |
-    @Html.ActionLink("Back to List", "Index")
+   @if (@HttpUtility.HtmlDecode(User.Identity.Name) ==
+                                      @Html.DisplayFor(model => model.User.Username).ToString())
+   {
+    <a href="../Edit/@Model.PostId.ToString()" class="btn btn-blue btn-effect" role="button">Edit Post</a>
+    <a href="../Delete/@Model.PostId.ToString()" class="btn btn-blue btn-effect" role="button">Delete Post</a>
+   }
 </p>

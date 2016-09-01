@@ -5,8 +5,8 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -24,7 +24,7 @@ textarea {
 }
 
 .tabulance-log-in{
-    padding-left: 10em;
+    padding-left: 20em;
 }
 
 .greeting{
@@ -45,6 +45,7 @@ textarea {
 }
 
 .search-box{
+    display: inline;
     margin-top: 2em;
     margin-bottom: 2em;
 }

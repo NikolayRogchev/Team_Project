@@ -31,5 +31,13 @@ namespace Blog.Controllers
 
             return View();
         }
+
+        public ActionResult Category()
+        {
+            var posts = from p in db.Post
+                        select p;
+
+            return View(posts.ToList());
+        }
     }
 }
